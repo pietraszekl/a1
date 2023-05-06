@@ -1,8 +1,8 @@
 function initMainMenu() {
   const topLevelNav = document.getElementsByClassName("js-topLevelNav");
   const subLevelNav = document.getElementsByClassName("js-subLevelNav");
-  Array.from(topLevelNav).forEach((navEl) => new TopMenuItem(navEl, topLevelNav));
-  Array.from(subLevelNav).forEach((subNavEl) => new SubMenuItem(subNavEl));
+  [...topLevelNav].forEach((navEl) => new TopMenuItem(navEl, topLevelNav));
+  [...subLevelNav].forEach((subNavEl) => new SubMenuItem(subNavEl));
 }
 
 class MenuItem {
@@ -13,7 +13,6 @@ class MenuItem {
   }
 
   handleEvent(event) {
-    event.stopPropagation();
     console.log("event", event);
   }
 }
@@ -24,6 +23,7 @@ class SubMenuItem extends MenuItem {
   }
 
   handleEvent() {
+    event.stopPropagation();
     alert(event.target.innerText);
   }
 }
@@ -36,7 +36,6 @@ class TopMenuItem extends MenuItem {
   ACTIVE_CLASS = "is-active";
 
   handleEvent(event) {
-    event.stopPropagation();
     this.toggleActiveClass(event);
   }
 
@@ -45,7 +44,7 @@ class TopMenuItem extends MenuItem {
   }
 
   removeActiveClass() {
-    Array.from(this.allElements).forEach((navEl) => {
+    [...this.allElements].forEach((navEl) => {
       navEl.classList.remove(this.ACTIVE_CLASS);
     });
   }

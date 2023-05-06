@@ -19,6 +19,7 @@ ul {
 
 .main-content {
   flex: 1;
+  z-index: -2;
 }
 
 .container {
@@ -36,7 +37,9 @@ ul {
 }
 
 .site-nav {
-  background-color: lightgrey;
+  background-color: white;
+  border-bottom: solid 1px lightgray;
+  z-index: 3;
 }
 
 .nav ul {
@@ -47,7 +50,6 @@ ul {
 .nav__menu-wrapper {
   height: 40px;
   display: flex;
-  z-index: 2;
 }
 
 .nav-menu-item {
@@ -89,14 +91,16 @@ ul {
   left: 0;
   padding: 1rem;
   background-color: lightcoral;
-  transition: top 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   z-index: 1;
+  opacity: 0;
 }
 
 .nav-menu-item.is-active .submenu-container {
   visibility: visible;
   height: auto;
   top: 40px;
+  opacity: 1;
 }
 
 .submenu {
