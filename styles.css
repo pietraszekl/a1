@@ -1,0 +1,50 @@
+html {
+  line-height: 1.15;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+li,
+ol,
+ul {
+  list-style: outside none none;
+}
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  background-color: lightslategray;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.site-nav {
+  background-color: lightgrey;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav__menu-wrapper {
+  height: 40px;
+  display: flex;
+}
