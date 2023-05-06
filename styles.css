@@ -47,4 +47,68 @@ ul {
 .nav__menu-wrapper {
   height: 40px;
   display: flex;
+  z-index: 2;
+}
+
+.nav-menu-item {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  margin-right: 1px;
+}
+
+.nav-menu-item .item-name {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0 0.5rem;
+  font-size: 14px;
+  line-height: 32px;
+  font-weight: bold;
+  color: #000;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.nav-menu-item:hover {
+  background-color: lightpink;
+}
+
+.nav-menu-item.is-active {
+  background-color: lightcoral;
+}
+
+.submenu-container {
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  top: -200%;
+  left: 0;
+  padding: 1rem;
+  background-color: lightcoral;
+  transition: top 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.nav-menu-item.is-active .submenu-container {
+  visibility: visible;
+  height: auto;
+  top: 40px;
+}
+
+.submenu {
+  display: flex;
+}
+
+.submenu-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: max-content;
+}
+
+.submenu-item:hover {
+  background-color: cornflowerblue;
 }
